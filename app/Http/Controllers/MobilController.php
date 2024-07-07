@@ -9,7 +9,7 @@ class MobilController extends Controller
 {
     public function index()
     {
-        $mobils = Mobil::paginate(10);
+        $mobils = Mobil::paginate(5);
         return view('mobils.index', compact('mobils'));
     }
 
