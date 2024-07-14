@@ -20,7 +20,7 @@
                     <input type="text" class="form-control" id="tahun" name="tahun" value="{{ $mobil->tahun }}">
                 </div>
                 <div class="mb-3">
-                    <label for="harga_beli" class="form-label">Harga Beli</label>
+                    <label for="harga_beli" class="form-label">Harga Sewa</label>
                     <input type="text" class="form-control" id="harga_beli" name="harga_beli" value="{{ $mobil->harga_beli }}">
                 </div>
                 <div class="mb-3">

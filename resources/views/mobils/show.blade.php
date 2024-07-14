@@ -11,7 +11,7 @@
                     <p class="card-text">{{ $mobil->deskripsi }}</p>
                     <div class="row mb-3">
                       <h6 class="col-3 card-subtitle text-muted">Tahun : {{ $mobil->tahun }}</h6>
-                      <h6 class="col-4 card-subtitle text-muted">Harga : Rp {{ number_format($mobil->harga_beli, 0, ',', '.') }}</h6>
+                      <h6 class="col-4 card-subtitle text-muted">Harga Sewa: Rp {{ number_format($mobil->harga_beli, 0, ',', '.') }}</h6>
                     </div>
                 </div>
               </div>

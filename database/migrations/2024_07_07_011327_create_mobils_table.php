@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('merk');
             $table->string('model');
             $table->integer('tahun');
-            $table->bigInteger('harga_beli');
+            $table->decimal('harga_beli', 20, 0);
             $table->text('deskripsi')->nullable();
             $table->timestamps();
         });
