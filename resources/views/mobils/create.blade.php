@@ -26,6 +26,14 @@
                     <label for="deskripsi" class="form-label">Deskripsi</label>
                     <textarea class="form-control" id="deskripsi" name="deskripsi" rows="5"></textarea>
                 </div>
+                <div class="mb-3">
+                    <label for="start_booking" class="form-label">Mulai Booking</label>
+                    <input type="date" class="form-control" id="start_booking" name="start_booking">
+                </div>
+                <div class="mb-3">
+                    <label for="finish_booking" class="form-label">Selesai Booking</label>
+                    <input type="date" class="form-control" id="finish_booking" name="finish_booking">
+                </div>
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="{{ route('mobils.index') }}" class="btn btn-secondary">Batal</a>
             </form>

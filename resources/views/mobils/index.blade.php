@@ -25,6 +25,8 @@
                         <th>ID</th>
                         <th>Merk</th>
                         <th>Model</th>
+                        <th>Mulai Booking</th>
+                        <th>Selesai Booking</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -35,6 +37,8 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $mobil->merk }}</td>
                                 <td>{{ $mobil->model }}</td>
+                                <td>{{ $mobil->start_booking }}</td>
+                                <td>{{ $mobil->finish_booking }}</td>
                                 <td>
                                     <a href="{{ route('mobils.show', $mobil->id) }}" class="btn btn-info">Lihat</a>
                                     <a href="{{ route('mobils.edit', $mobil->id) }}" class="btn btn-warning">Edit</a>
@@ -48,7 +52,7 @@
                         @endforeach
                     @else
                         <tr>
-                            <td colspan="4" class="text-center">Data masih kosong.</td>
+                            <td colspan="6" class="text-center">Data masih kosong.</td>
                         </tr>
                     @endif
                 </tbody>
