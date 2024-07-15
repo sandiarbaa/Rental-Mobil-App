@@ -5,9 +5,16 @@
         <div class="col-8 col-md-10">
             <h2>Daftar Mobil</h2>
             <a href="{{ route('mobils.create') }}" class="btn btn-primary mb-3">Tambah Mobil</a>
-            @if (session('success'))
+            @if (session('addDataSuccess'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <p>{{ session('success') }}</p>
+                    <p>{{ session('addDataSuccess') }}</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            @if (session('editDataSuccess'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <p>{{ session('editDataSuccess') }}</p>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif

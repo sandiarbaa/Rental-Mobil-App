@@ -26,10 +26,8 @@ class MobilController extends Controller
             'tahun' => 'required|digits:4|integer|min:1900|max:' . (date('Y')),
             'harga_beli' => 'required|numeric',
         ]);
-
         Mobil::create($request->all());
-
-        return redirect()->route('mobils.index')->with('success', 'Mobil berhasil ditambahkan.');
+        return redirect()->route('mobils.index')->with('addDataSuccess', 'Mobil berhasil ditambahkan.');
     }
 
     public function show(Mobil $mobil)
@@ -50,10 +48,8 @@ class MobilController extends Controller
             'tahun' => 'required|digits:4|integer|min:1900|max:' . (date('Y')),
             'harga_beli' => 'required|numeric',
         ]);
-
         $mobil->update($request->all());
-
-        return redirect()->route('mobils.index')->with('success', 'Mobil berhasil diperbarui.');
+        return redirect()->route('mobils.index')->with('editDataSuccess', 'Mobil berhasil diperbarui.');
     }
 
     public function destroy(Mobil $mobil)

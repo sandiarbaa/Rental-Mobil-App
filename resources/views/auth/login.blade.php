@@ -4,22 +4,20 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             {{-- Flash Message --}}
+            @if (session('registerSuccess'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <p>{{ session('registerSuccess') }}</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
             @if (session('loginError'))
-                {{-- <div class="alert alert-success" role="alert">
-                    {{ session('success') }}
-                </div> --}}
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <p>{{ session('loginError') }}</p>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
 
-            {{-- @if (session('loginError'))
-                <div class="alert alert-danger" role="alert">
-                    {{ session('loginError') }}
-                </div>
-            @endif --}}
-            
             {{-- Card Form --}}
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
@@ -61,7 +59,6 @@
 
             {{-- Link Register --}}
             <div class="text-center mt-3">
-                {{-- <p>{{ __('No Account?') }} <a href="{{ route('register') }}">{{ __('Register') }}</a></p> --}}
                 <p>Don't have an account? <a href="{{ route('register') }}">Register</a></p>
             </div>
         </div>

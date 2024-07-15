@@ -8,25 +8,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
-        <a class="navbar-brand" href="#">Rental Mobil SAP</a>
-        @auth
-        <div class="dropdown ms-auto">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Welcome back, {{ auth()->user()->name }}
-            </button>
-            <ul class="dropdown-menu">
-            <li>
-                <form action="/logout" method="POST">
-                    @csrf
-                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</button>
-                </form>
-              </li>
-            </ul>
-          </div>
-        @endauth
-        {{-- <div class="ml-auto btn btn-secondary">Logout</div> --}}
-    </nav>
+  
+    @include('components.navbar')
+    
     <div class="container mt-5">
         @yield('content')
     </div>
