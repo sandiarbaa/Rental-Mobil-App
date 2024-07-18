@@ -1,25 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-8">
-            <h2>Detail Mobil</h2>
-            <div class="card">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4 text-center">Detail Mobil</h2>
+            <div class="card shadow-sm">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">Merk: {{ $mobil->merk }}</h4>
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{ $mobil->merk }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ $mobil->model }}</h6>
+                    <h6 class="card-subtitle mb-3 text-muted">Tipe: {{ $mobil->model }}</h6>
                     <p class="card-text">{{ $mobil->deskripsi }}</p>
-                    <div class="row mb-3">
-                        <h6 class="col-3 card-subtitle text-muted">Tahun: {{ $mobil->tahun }}</h6>
-                        <h6 class="col-4 card-subtitle text-muted">Harga Sewa: Rp {{ number_format($mobil->harga_beli, 0, ',', '.') }}</h6>
+                    <div class="row my-4">
+                        <div class="col-6">
+                            <h6 class="card-subtitle text-muted">Tahun Rilis: {{ $mobil->tahun }}</h6>
+                        </div>
+                        <div class="col-6">
+                            <h6 class="card-subtitle text-muted">Harga Sewa: Rp {{ number_format($mobil->harga_beli, 0, ',', '.') }}</h6>
+                        </div>
                     </div>
-                    <div class="row mb-3">
-                        <h6 class="col-5 card-subtitle text-muted">Mulai Booking: {{ $mobil->start_booking }}</h6>
-                        <h6 class="col-5 card-subtitle text-muted">Selesai Booking: {{ $mobil->finish_booking }}</h6>
+                    <div class="row mb-4">
+                        <div class="col-6">
+                            <p class="card-subtitle text-muted">Mulai Booking: {{ $mobil->start_booking }}</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="card-subtitle text-muted">Selesai Booking: {{ $mobil->finish_booking }}</p>
+                        </div>
                     </div>
+                    <a href="{{ route('mobils.index') }}" class="btn btn-dark">Kembali</a>
                 </div>
             </div>
-            <a href="{{ route('mobils.index') }}" class="btn btn-primary mt-3">Kembali</a>
         </div>
     </div>
 @endsection
